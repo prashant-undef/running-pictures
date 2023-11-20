@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "flask-dev": "FLASK_DEBUG=1 pip3 install -r requirements.txt && python3 -m flask --app api/index run -p 5328",
+    "sanic-dev": "pip3 install -r requirements.txt && python3 -m sanic api.index.app --host=127.0.0.1 --port=5328",
     "next-dev": "next dev",
-    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run sanic-dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,6 +22,8 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.3.1",
+    "swr": "^2.2.4",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
   }
